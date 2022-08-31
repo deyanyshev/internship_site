@@ -1,8 +1,7 @@
-package com.internship.site.model;
+package com.internship.site.entity;
 
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 
@@ -27,6 +26,10 @@ public class User {
     private Set<Product> products = new HashSet<>();
 
     private String name, login, password, email;
+
+    @OneToOne()
+    @JoinColumn(name = "token_id")
+    private Token token;
 
     public User() {
     }
@@ -61,4 +64,12 @@ public class User {
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
+
+    public Token getToken() {
+        return token;
+    }
+
+    public void setToken(Token token) {
+        this.token = token;
+    }
 }

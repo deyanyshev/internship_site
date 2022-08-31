@@ -1,4 +1,4 @@
-package com.internship.site.model;
+package com.internship.site.entity;
 
 import javax.persistence.*;
 import java.util.HashSet;
